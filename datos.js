@@ -1,43 +1,40 @@
 /*
- * DATOS DE BUS AL BENÍTEZ
- * Los datos de líneas, paradas y horarios deben transcribirse
- * desde documentos oficiales actuales de COMUJESA y comprobarse.
- *
- * No rellenar con suposiciones. "minutos" solo puede contener
- * una duración respaldada por una fuente o marcada como estimada.
+ * Datos de Bus al Benítez. Recorridos basados en las fichas oficiales de COMUJESA.
+ * Los tiempos de la app son estimaciones didácticas, no horarios oficiales.
+ * Fuente: https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/
  */
-
 const DATOS_BUS = {
-  fuente: {
-    nombre: "COMUJESA",
-    url: "https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios",
-    temporada: null,
-    fechaActualizacion: null
-  },
-
+  fuente: { nombre:"COMUJESA", url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/", horarios:"Invierno 2026/2027", revisado:"2026-11-01" },
   destino: {
-    nombre: "IES Andrés Benítez",
-    paradaId: null,
-    paradasAlternativas: []
+    nombre:"IES Andrés Benítez",
+    direccion:"Calle Doctor Fleming, s/n, Jerez de la Frontera",
+    paradas:[
+      {nombre:"San Benito", caminarMin:3},
+      {nombre:"García Lorca", caminarMin:3},
+      {nombre:"Tomás Gª Figueras", caminarMin:5},
+      {nombre:"Reina Sofía San Benito", caminarMin:6}
+    ]
   },
-
-  // Cada zona debe apuntar a paradas reales incluidas en las líneas.
-  zonas: [
-    // Ejemplo de estructura (no es un dato real):
-    // { id: "zona-centro", nombre: "Centro", paradas: ["P001"] }
+  lineas:[
+    {id:"L4-ida",numero:"4",nombre:"Plaza Esteve – Hipercor",sentido:"Hacia Hipercor",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-4",estadoRecorrido:"oficial",estadoHorario:"pendiente de incorporar",paradas:["Plaza Esteve","Sto. Domingo II","Sevilla","Álvaro Domecq","Inst. Coloma","Cruz Roja","Merca 80","García Lorca","María Auxiliadora","Avd. la Comedia","Parqueluz","San Joaquín","Buenos Aires","Guatemala","Guatemala II","Hipercor (Andalucía)"]},
+    {id:"L4-vuelta",numero:"4",nombre:"Hipercor – Plaza Esteve",sentido:"Hacia Plaza Esteve",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-4",estadoRecorrido:"oficial",estadoHorario:"pendiente de incorporar",paradas:["Hipercor (Andalucía)","Avenida Andalucía","Av. San Juan de Ávila","Maternidad","San Joaquín","Parqueluz","La Espléndida","San Ginés","García Lorca","Merca 80","Cruz Roja","Pza. Caballo","Torres de Córdoba","La Constancia","España","Estaciones (Minotauro)","Diego F. Herrera","Angustias Canal Sur"]},
+    {id:"L8-ida",numero:"8",nombre:"Circular 1",sentido:"Hacia Área Sur 3",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-8",estadoRecorrido:"oficial",estadoHorario:"pendiente de validar versión 2026/2027",paradas:["Plaza Angustias","Porvenir","Pz. Madre Dios","Cartuja","Retiro","Pq. Retiro","Alborán","Delicias","Centro Salud Asunción","Asunción","Torres Blancas","Pza. Biarritz","Lola Flores","El Pinar","Residencia Pensionista","Piscina Jerez","Suite la Marquesa","Almería","Avda. Europa","Inst. F.P. La Granja","Entre Parques","Arrumbadores","Carrefour Norte","Edf. Congreso","Sementales","Jacaranda","Club Padel","Las Pérgolas","Hipercor (Altillo)","Hipercor (Voltaire)","Cash Dian","Guatemala","Buenos Aires","Maternidad","San Joaquín","Parqueluz","La Espléndida","San Ginés","García Lorca","Hacienda","San Benito","Tomás Gª Figueras","Arcipreste Corona","Reina Sofía San Benito","Urgencias","Consultas Externas","Hospital Infantil","Bda. El Carmen","Los Liños","Mosto","Calvario","Area Sur","Area Sur 2","Area Sur 3"]},
+    {id:"L8-vuelta",numero:"8",nombre:"Circular 1",sentido:"Hacia Diego F. Herrera",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-8",estadoRecorrido:"oficial",estadoHorario:"pendiente de validar versión 2026/2027",paradas:["Zoológico","Zoilo Ruiz Mateos","Romero Palomo","Luis Vives","Nueva Medina","Puerta Rota","C/ Ermita de Guía","Alcazar","Cuatro Caminos","Tanatorio","Carrefour Sur","La venencia","Juana Aguilar","Miguel Hue","Historiador Bª Gtrrz.","Campo La Juventud","Santo Tomas","Liberación","Balneario","Constitución","Nueva Cartuja","Solidaridad","Vallesequillo II","Moreno Mendoza","Vergara Isasi","Bajada San Telmo","Ermita San Telmo","C/ Manuel Moneo","Diego F. Herrera"]},
+    {id:"L9-ida",numero:"9",nombre:"Circular 2",sentido:"Hacia Área Sur 3",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-9",estadoRecorrido:"oficial",estadoHorario:"pendiente de validar versión 2026/2027",paradas:["Plaza Angustias","Porvenir Única","Pz. Madre Dios","FF.CC.","Tomás Bengoa","Avd. Vallesequillo","Fdz. Sierra","Obispo Ciralda","San Eloy","Nueva Cartuja","Solidaridad","Vallesequillo II","Moreno Mendoza","Vergara Isasi","Balneario","Liberación","Santo Tomas","Campo La Juventud","Historiador Bª Gtrrz.","Miguel Hue","Juana Aguilar","La venencia","Carrefour Sur","Tanatorio","Cuatro Caminos","Alcazar","Asta Regia","Bda. El Pilar","Puerta Rota","Nueva Medina","Luis Vives","Romero Palomo","Zoilo Ruiz Mateos","Zoológico"]},
+    {id:"L9-vuelta",numero:"9",nombre:"Circular 2",sentido:"Hacia Plaza Angustias",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-9",estadoRecorrido:"oficial",estadoHorario:"pendiente de validar versión 2026/2027",paradas:["Area Sur 3","Area Sur 2","Area Sur","Tablao","Mosto","Los Liños","La Serrana","La Plata","Perpetuo Socorro","Bda. El Carmen","Urgencias","Consultas Externas","Hospital Infantil","Reina Sofía San Benito","Arcipreste Corona","Tomás Gª Figueras","San Benito","Hacienda","García Lorca","María Auxiliadora","Avd. la Comedia","Parqueluz","San Joaquín","Buenos Aires","Guatemala","Guatemala II","Hipercor Rioja","Hipercor","Las Pérgolas","Club Padel","Jacaranda","Sementales","Edf. Congreso","Carrefour Norte","Arrumbadores","Entre Parques","Inst. F.P. La Granja","Avda. Europa","Almería","Suite la Marquesa","Piscina Jerez","Residencia Pensionista","El Pinar","Lola Flores","Pza. Biarritz","Torres Blancas","Asunción","Centro Salud Asunción","Delicias","Alborán","Pq. Retiro","Retiro","Cartuja","Diego F. Herrera"]},
+    {id:"L10-ida",numero:"10",nombre:"La Canaleja – Esteve – Hospital",sentido:"Hacia Hospital Infantil",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-10",estadoRecorrido:"oficial",estadoHorario:"pendiente de incorporar",paradas:["Canaleja","Caños de Meca","Doña María","Macedonia","Fresa","Las Palmeras","Pza. Carpita","Parque Atlántico","Mediterráneo","Manjón","El Serrallo","Parque Cartuja","Rsd El Duque","Pino Solete","C/Sta inés","Rsd El Duque","Avda Medina Sidonia","Vallesequillo","Tomás Bengoa","FF.CC.","Diego F. Herrera","Angustias Canal Sur","Plaza Esteve","Sto. Domingo II","Sevilla","Álvaro Domecq","Juzgados","San Benito","Tomás Gª Figueras","Reina Sofía San Benito","Arcipreste Corona","Urgencias","Consultas Externas","Hospital Infantil"]},
+    {id:"L10-vuelta",numero:"10",nombre:"La Canaleja – Esteve – Hospital",sentido:"Hacia Parque Eroski / Canaleja",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-10",estadoRecorrido:"oficial",estadoHorario:"pendiente de incorporar",paradas:["Hospital Infantil","Arcipreste Corona","Reina Sofía San Benito","Tomás Gª Figueras","San Benito","Juzgados","Álvaro Domecq","Sevilla","Mamelón","Sto. Domingo III","Rotonda Casino","Sto. Domingo II","Sevilla","Paúl","Fátima","España","Estaciones (Minotauro)","Angustias","Porvenir","Pz. Madre Dios","FF.CC.","Tomás Bengoa","Avd. Vallesequillo","Fdz. Sierra","Obispo Cirada","San Eloy","Avda Medina Sidonia","Pino Solete Canaleja","C/Sta inés Canaleja","Rsd El Duque Canaleja","Avda Medina Sidonia Canaleja","Parque Cartuja","El Serrallo","Manjón","Mediterráneo H","Parque Atlántico","Pza. Carpita","Las Palmeras","Fresa","Macedonia","C/Rompidillo"]}
   ],
-
-  // Estructura de cada línea:
-  // {
-  //   id: "L1",
-  //   nombre: "Línea 1",
-  //   sentido: "Sentido verificado",
-  //   paradas: ["P001", "P002", "P003"],
-  //   tiemposEntreParadas: [4, 6],
-  //   horarios: [],
-  //   urlHorario: "",
-  //   estado: "verificado" // o "estimado"
-  // }
-  paradas: [],
-  lineas: []
+  zonas:[
+    {id:"centro",nombre:"Centro / Plaza Esteve",paradas:["Plaza Esteve","Plaza Angustias","Pz. Madre Dios"]},
+    {id:"canaleja",nombre:"La Canaleja",paradas:["Canaleja","Fresa","Parque Atlántico"]},
+    {id:"hipercor",nombre:"Hipercor / San Joaquín",paradas:["Hipercor (Andalucía)","Hipercor","San Joaquín","Buenos Aires","Guatemala"]},
+    {id:"picaduenas",nombre:"Picadueñas / Nueva Medina",paradas:["Nueva Medina","Puerta Rota","Luis Vives","Romero Palomo"]},
+    {id:"area-sur",nombre:"Área Sur",paradas:["Area Sur","Area Sur 2","Area Sur 3","Mosto","Los Liños"]},
+    {id:"la-granja",nombre:"La Granja / Avenida de Europa",paradas:["Inst. F.P. La Granja","Avda. Europa","Almería"]},
+    {id:"cartuja",nombre:"Cartuja / Vallesequillo",paradas:["Cartuja","Nueva Cartuja","Vallesequillo II","Moreno Mendoza"]},
+    {id:"san-telmo",nombre:"San Telmo",paradas:["Bajada San Telmo","Ermita San Telmo","Constitución"]},
+    {id:"torres",nombre:"Las Torres / Biarritz",paradas:["Torres Blancas","Pza. Biarritz","Lola Flores","El Pinar"]},
+    {id:"hospital",nombre:"Zona Hospital",paradas:["Hospital Infantil","Urgencias","Consultas Externas"]}
+  ]
 };
