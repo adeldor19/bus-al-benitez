@@ -26,15 +26,15 @@ const DATOS_BUS = {
     {id:"L10-vuelta",numero:"10",nombre:"La Canaleja – Esteve – Hospital",sentido:"Hacia Parque Eroski / Canaleja",url:"https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/linea-10",estadoRecorrido:"oficial",estadoHorario:"pendiente de incorporar",paradas:["Hospital Infantil","Arcipreste Corona","Reina Sofía San Benito","Tomás Gª Figueras","San Benito","Juzgados","Álvaro Domecq","Sevilla","Mamelón","Sto. Domingo III","Rotonda Casino","Sto. Domingo II","Sevilla","Paúl","Fátima","España","Estaciones (Minotauro)","Angustias","Porvenir","Pz. Madre Dios","FF.CC.","Tomás Bengoa","Avd. Vallesequillo","Fdz. Sierra","Obispo Cirada","San Eloy","Avda Medina Sidonia","Pino Solete Canaleja","C/Sta inés Canaleja","Rsd El Duque Canaleja","Avda Medina Sidonia Canaleja","Parque Cartuja","El Serrallo","Manjón","Mediterráneo H","Parque Atlántico","Pza. Carpita","Las Palmeras","Fresa","Macedonia","C/Rompidillo"]}
   ],
   zonas:[
-    {id:"centro",nombre:"Centro / Plaza Esteve",paradas:["Plaza Esteve","Plaza Angustias","Pz. Madre Dios"]},
-    {id:"canaleja",nombre:"La Canaleja",paradas:["Canaleja","Fresa","Parque Atlántico"]},
-    {id:"hipercor",nombre:"Hipercor / San Joaquín",paradas:["Hipercor (Andalucía)","Hipercor","San Joaquín","Buenos Aires","Guatemala"]},
-    {id:"picaduenas",nombre:"Picadueñas / Nueva Medina",paradas:["Nueva Medina","Puerta Rota","Luis Vives","Romero Palomo"]},
-    {id:"area-sur",nombre:"Área Sur",paradas:["Area Sur","Area Sur 2","Area Sur 3","Mosto","Los Liños"]},
-    {id:"la-granja",nombre:"La Granja / Avenida de Europa",paradas:["Inst. F.P. La Granja","Avda. Europa","Almería"]},
-    {id:"cartuja",nombre:"Cartuja / Vallesequillo",paradas:["Cartuja","Nueva Cartuja","Vallesequillo II","Moreno Mendoza"]},
-    {id:"san-telmo",nombre:"San Telmo",paradas:["Bajada San Telmo","Ermita San Telmo","Constitución"]},
-    {id:"torres",nombre:"Las Torres / Biarritz",paradas:["Torres Blancas","Pza. Biarritz","Lola Flores","El Pinar"]},
-    {id:"hospital",nombre:"Zona Hospital",paradas:["Hospital Infantil","Urgencias","Consultas Externas"]}
+    {id:"centro",nombre:"Centro / Plaza Esteve",paradas:["Plaza Esteve"]},
+    {id:"canaleja",nombre:"La Canaleja (parada Canaleja)",paradas:["Canaleja"]},
+    {id:"hipercor",nombre:"Hipercor / San Joaquín",paradas:["Hipercor (Andalucía)"]},
+    {id:"picaduenas",nombre:"Picadueñas / Nueva Medina",paradas:["Nueva Medina"]},
+    {id:"area-sur",nombre:"Área Sur (parada Área Sur 3)",paradas:["Area Sur 3"]},
+    {id:"la-granja",nombre:"La Granja (parada I.F.P.)",paradas:["Inst. F.P. La Granja"]},
+    {id:"cartuja",nombre:"Cartuja (parada Cartuja)",paradas:["Cartuja"]},
+    {id:"san-telmo",nombre:"San Telmo (parada Bajada San Telmo)",paradas:["Bajada San Telmo"]},
+    {id:"torres",nombre:"Las Torres (parada Torres Blancas)",paradas:["Torres Blancas"]},
+    {id:"hospital",nombre:"Zona Hospital (parada Hospital Infantil)",paradas:["Hospital Infantil"]}
   ]
 };
