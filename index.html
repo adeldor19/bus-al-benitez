@@ -1,81 +1,33 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17324d">
   <meta name="description" content="Planificador educativo de rutas de autobús al IES Andrés Benítez de Jerez.">
-  <title>Bus al Benítez</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Bus al Benítez</title><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="./" aria-label="Bus al Benítez, inicio">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span><span class="eyebrow">MOVILIDAD ESCOLAR · JEREZ</span><strong>Bus al Benítez</strong></span>
-      </a>
-      <a class="header-link" href="https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios" target="_blank" rel="noopener noreferrer">Datos oficiales ↗</a>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="intro">
-      <p class="eyebrow accent">PLANIFICADOR DE RUTAS</p>
-      <h1>Tu camino al<br><span>IES Andrés Benítez.</span></h1>
-      <p class="lead">Explora cómo llegar en autobús desde tu zona de Jerez y compara las alternativas disponibles.</p>
-    </section>
-
-    <section class="planner card" aria-labelledby="planner-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">01 / TU VIAJE</p><h2 id="planner-title">¿Desde dónde sales?</h2></div>
-        <span class="step-icon" aria-hidden="true">↗</span>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="./" aria-label="Bus al Benítez, inicio"><span class="brand-mark" aria-hidden="true">B</span><span><span class="eyebrow">MOVILIDAD ESCOLAR · JEREZ</span><strong>Bus al Benítez</strong></span></a>
+  <a class="header-link" href="https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/" target="_blank" rel="noopener noreferrer">Datos oficiales ↗</a>
+</div></header>
+<main class="wrap">
+  <section class="intro"><p class="eyebrow accent">PLANIFICADOR DE RUTAS</p><h1>Tu camino al<br><span>IES Andrés Benítez.</span></h1><p class="lead">Explora recorridos de autobús desde distintas zonas de Jerez y compara alternativas para llegar al instituto.</p></section>
+  <section class="planner card" aria-labelledby="planner-title">
+    <div class="section-heading"><div><p class="eyebrow">01 / TU VIAJE</p><h2 id="planner-title">¿Desde dónde sales?</h2></div><span class="step-icon" aria-hidden="true">↗</span></div>
+    <form id="route-form">
+      <div class="field"><label for="origin">Barrio o zona de Jerez</label><select id="origin" name="origin" required><option value="">Cargando zonas…</option></select></div>
+      <div class="field-row">
+        <div class="field"><label for="arrival">Hora a la que quieres llegar</label><input id="arrival" name="arrival" type="time" value="08:15" required></div>
+        <div class="field"><label for="buffer">Margen antes de entrar</label><select id="buffer" name="buffer"><option value="0">Sin margen</option><option value="5" selected>5 minutos</option><option value="10">10 minutos</option><option value="15">15 minutos</option></select></div>
       </div>
-      <form id="route-form">
-        <div class="field">
-          <label for="origin">Barrio o zona de Jerez</label>
-          <select id="origin" name="origin" required>
-            <option value="">Cargando zonas…</option>
-          </select>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="arrival">Hora de entrada / llegada</label>
-            <input id="arrival" name="arrival" type="time" value="08:15" required>
-          </div>
-          <div class="field">
-            <label for="buffer">Margen antes de entrar</label>
-            <select id="buffer" name="buffer">
-              <option value="0">Sin margen</option>
-              <option value="5" selected>5 minutos</option>
-              <option value="10">10 minutos</option>
-              <option value="15">15 minutos</option>
-            </select>
-          </div>
-        </div>
-        <button class="primary-button" type="submit"><span>Buscar la mejor ruta</span><span aria-hidden="true">→</span></button>
-      </form>
-      <p class="microcopy">La aplicación solo mostrará rutas cuando los recorridos y los tiempos estén suficientemente documentados.</p>
-    </section>
-
-    <section id="results" class="results" aria-live="polite" aria-busy="false">
-      <div class="empty-state card">
-        <span class="empty-symbol" aria-hidden="true">⌁</span>
-        <p class="eyebrow">02 / RESULTADOS</p>
-        <h2>Prepara tu trayecto</h2>
-        <p>Selecciona tu zona para consultar las alternativas que podamos verificar con datos de COMUJESA.</p>
-      </div>
-    </section>
-
-    <section class="info-strip">
-      <span class="info-icon" aria-hidden="true">i</span>
-      <div><strong>Información y transparencia</strong><p>Los horarios confirmados se distinguirán de los tiempos estimados. Esta es una herramienta educativa independiente, no un servicio oficial de COMUJESA.</p><a href="https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios" target="_blank" rel="noopener noreferrer">Consultar líneas, paradas y horarios de COMUJESA ↗</a></div>
-    </section>
-  </main>
-
-  <footer><div class="wrap footer-inner"><span>IES Andrés Benítez · Jerez de la Frontera</span><span>Un proyecto educativo de movilidad sostenible.</span></div></footer>
-
-  <script src="datos.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+      <button class="primary-button" type="submit"><span>Comparar rutas</span><span aria-hidden="true">→</span></button>
+    </form>
+    <p class="microcopy">Primera versión: compara recorridos y estima su duración. Los horarios oficiales se incorporarán en una siguiente fase.</p>
+  </section>
+  <section id="results" class="results" aria-live="polite"><div class="empty-state card"><span class="empty-symbol" aria-hidden="true">⌁</span><p class="eyebrow">02 / RESULTADOS</p><h2>Prepara tu trayecto</h2><p>Selecciona una zona para comparar las rutas disponibles hacia las paradas cercanas al instituto.</p></div></section>
+  <section class="info-strip"><span class="info-icon" aria-hidden="true">i</span><div><strong>Cómo se calculan los resultados</strong><p>Los recorridos se basan en la información pública de COMUJESA. Las duraciones son aproximaciones didácticas por número de tramos; no son predicciones oficiales ni garantizan la llegada a una hora concreta.</p><a href="https://www.comujesa.es/autobuses-urbanos/lineas-paradas-y-horarios/" target="_blank" rel="noopener noreferrer">Consultar líneas, paradas y horarios oficiales ↗</a></div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>IES Andrés Benítez · Jerez de la Frontera</span><span>Un proyecto educativo de movilidad sostenible.</span></div></footer>
+<script src="datos.js"></script><script src="app.js"></script>
+</body></html>
