@@ -78,7 +78,16 @@ function buscarRutas(zonaId){
  }))));
  const unicas=new Map();
  candidatas.forEach(r=>{const key=[r.lineas.map(l=>l.id).join(">"),claveParada(r.origen),claveParada(r.destino),claveParada(r.cambio||"")].join("|");if(!unicas.has(key)||r.minutos<unicas.get(key).minutos)unicas.set(key,r);});
- return [...unicas.values()].sort((a,b)=>a.minutos-b.minutos||a.transbordos-b.transbordos||a.tramos-b.tramos).slice(0,5);
+ const ordenadas=[...unicas.values()].sort((a,b)=>a.transbordos-b.transbordos||a.minutos-b.minutos||a.tramos-b.tramos);
+ // No ocultar una línea directa solo porque la estimación simplificada de un transbordo sea menor.
+ // Reservar primero la mejor ruta directa de cada línea; después completar con las alternativas más rápidas.
+ const elegidas=[],lineasDirectas=new Set();
+ ordenadas.filter(r=>r.transbordos===0).forEach(r=>{
+  const id=r.lineas[0].id;
+  if(!lineasDirectas.has(id)&&elegidas.length<5){elegidas.push(r);lineasDirectas.add(id);}
+ });
+ ordenadas.forEach(r=>{if(elegidas.length<5&&!elegidas.includes(r))elegidas.push(r);});
+ return elegidas.sort((a,b)=>a.transbordos-b.transbordos||a.minutos-b.minutos||a.tramos-b.tramos);
 }
 function dibujarRuta(ruta,i){
  const card=el("article","card route-card"),top=el("div","route-top");
