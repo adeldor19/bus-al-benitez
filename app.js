@@ -16,7 +16,7 @@ const MINUTOS_TRANSBORDO_ESTIMADOS=7;
 function normalizar(texto){return texto.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();}
 function claveParada(nombre){
  const n=normalizar(nombre);
- const alias={"sto domingo ii":"santo domingo ii","santo domingo ii":"santo domingo ii","porvenir unica":"porvenir","avd la comedia":"avenida la comedia","avenida la comedia":"avenida la comedia","avd vallesequillo":"avenida vallesequillo","avda vallesequillo":"avenida vallesequillo","avda europa":"avenida europa","avda medina sidonia":"avenida medina sidonia","c manuel hue":"miguel hue","c miguel hue":"miguel hue","c sta ines":"santa ines","tomas g figueras":"tomas g figueras","hipercor andalucia":"hipercor andalucia"};
+ const alias={"sto domingo ii":"santo domingo ii","santo domingo ii":"santo domingo ii","porvenir unica":"porvenir","avd la comedia":"avenida la comedia","avenida la comedia":"avenida la comedia","avd vallesequillo":"avenida vallesequillo","avda vallesequillo":"avenida vallesequillo","avda europa":"avenida europa","avda medina sidonia":"avenida medina sidonia","c manuel hue":"miguel hue","c miguel hue":"miguel hue","c sta ines":"santa ines","tomas g figueras":"tomas g figueras","hipercor andalucia":"hipercor andalucia","pz madre dios":"madre de dios","madre de dios":"madre de dios","esteve":"plaza esteve","plaza esteve":"plaza esteve","angustias canal sur unica":"angustias canal sur","angustias canal sur":"angustias canal sur"};
  return alias[n]||n;
 }
 function cargarZonas(){selectorOrigen.replaceChildren();selectorOrigen.add(new Option("Selecciona tu zona…",""));DATOS_BUS.zonas.forEach(z=>selectorOrigen.add(new Option(z.nombre,z.id)));selectorOrigen.disabled=DATOS_BUS.zonas.length===0;}
